@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package Modèle;
+
+import java.io.FileNotFoundException;
+
+/**
+ * @author User
+ *
+ */
+public class evenement {
+
+	/**
+	 * @param args
+	 */
+	
+	int resultatChance;
+	
+	public int getResultatChance() {
+		return resultatChance;
+	}
+	
+	public void setResultatChance(int a) {
+		
+	}
+	
+	public void lancerChance() throws FileNotFoundException {
+		de de = new de();
+		de.lancerDeVingt();
+		heros recup = new heros();
+		recup.recupPerso();
+		if (de.getDeVingt() < Integer.parseInt(recup.getChance())) {
+			setResultatChance(1);
+		}
+		
+		else {
+			setResultatChance(0);
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

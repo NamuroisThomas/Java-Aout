@@ -1,0 +1,17 @@
+package View;
+
+public class Snippet {
+	public void Volet4() {
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						Volet4 frame = new Volet4();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+		}
+}
+
