@@ -21,6 +21,7 @@ public class Controleur {
 	
 	Héros personnage = new Héros();
 	Volet volet = new Volet();
+	Evenement event = new Evenement();
 	De de = new De();
 	
 	/**
@@ -286,6 +287,10 @@ public class Controleur {
 		return personnage.getEndurance();
 	};
 	
+	public void modifierEndurance(int perte) {
+		personnage.setEndurance(personnage.getEndurance() - perte);
+	}
+	
 	public int prendreHabilite() {
 		return personnage.getHabilite();
 	};
@@ -302,6 +307,16 @@ public class Controleur {
 	public void charger() throws FileNotFoundException {
 		personnage.recupPersonnage();
 		volet.charger();
+	}
+	
+	public Boolean eventHabilite() {
+		event.setEventHabi(personnage.getHabilite());
+		return event.getEventHabi();
+	}
+	
+	public Boolean eventChance() {
+		event.setEventHabi(personnage.getHabilite());
+		return event.getEventHabi();
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException {

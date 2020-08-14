@@ -52,12 +52,7 @@ public class Accueil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				Controleur lancer = new Controleur();
-				try {
-					lancer.chargerPartie();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				lancer.lancerJeu();
 				dispose();
 			}
 		});

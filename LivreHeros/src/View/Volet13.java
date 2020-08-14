@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
-import Controle.controle;
+import Controle.Controleur;
 
 import javax.swing.JTextPane;
 
@@ -27,8 +27,8 @@ public class Volet13 extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	controle infos = new controle();
-	String volet = "13";
+	private Controleur controleur = new Controleur();
+	private int volet = 13;
 	
 	
 	
@@ -62,7 +62,7 @@ public class Volet13 extends JFrame {
 		lblNom.setFont(new Font("Baskerville Old Face", Font.PLAIN, 24));
 		lblNom.setBounds(95, 15, 150, 65);
 		Personnage.add(lblNom);
-		lblNom.setText(infos.prendreNom());
+		lblNom.setText(controleur.prendreNom());
 		
 		JLabel lblEndurance = new JLabel("Endurance:");
 		lblEndurance.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
@@ -83,19 +83,19 @@ public class Volet13 extends JFrame {
 		lblPointEndurance.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointEndurance.setBounds(170, 90, 100, 20);
 		Personnage.add(lblPointEndurance);
-		lblPointEndurance.setText(infos.prendreEndurance());
+		lblPointEndurance.setText(String.valueOf(controleur.prendreEndurance()));
 		
 		JLabel lblPointHabilite = new JLabel("0");
 		lblPointHabilite.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointHabilite.setBounds(170, 130, 100, 20);
 		Personnage.add(lblPointHabilite);
-		lblPointHabilite.setText(infos.prendreHabilite());
+		lblPointHabilite.setText(String.valueOf(controleur.prendreHabilite()));
 		
 		JLabel lblPointChance = new JLabel("0");
 		lblPointChance.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointChance.setBounds(170, 170, 100, 20);
 		Personnage.add(lblPointChance);
-		lblPointChance.setText(infos.prendreChance());
+		lblPointHabilite.setText(String.valueOf(controleur.prendreHabilite()));
 		
 		/* Histoire */
 		JTextPane Story = new JTextPane();
@@ -123,9 +123,8 @@ public class Volet13 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				controle launch = new controle();
 				try {
-					launch.sauvegardeVolet(volet);
+					controleur.sauvegarde(volet);
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -142,8 +141,7 @@ public class Volet13 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				controle launch = new controle();
-				launch.start();
+				controleur.lancerJeu();
 				dispose();
 			}
 		});
@@ -163,53 +161,44 @@ public class Volet13 extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				controle lancer = new controle();
-				try {
-					if(lancer.evenementHabilite() == 1) {
-						JLabel lblNewLabel = new JLabel();
-						lblNewLabel.setText("Vous arrivez à faire abstraction de la douleur et continuer à courir.");
-						lblNewLabel.setBounds(15, 15, 600, 40);
-						Choix.add(lblNewLabel);
-						
-						btnChoix1.setText("Suite");
-						btnChoix1.setBounds(630, 15, 140, 40);
-						Choix.add(btnChoix1);
-						btnChoix1.addActionListener(new ActionListener() {
-
-							@Override
-							public void actionPerformed(ActionEvent e) {
-								// TODO Auto-generated method stub
-								controle launch = new controle();
-								launch.Volet12();
-								dispose();
-							}
-						});
-					}
+				if(controleur.eventHabilite() == true) {
+					JLabel lblNewLabel = new JLabel();
+					lblNewLabel.setText("Vous arrivez à faire abstraction de la douleur et continuer à courir.");
+					lblNewLabel.setBounds(15, 15, 600, 40);
+					Choix.add(lblNewLabel);
 					
-					else {
-						JLabel lblNewLabel = new JLabel();
-						lblNewLabel.setText("La douleur est trop forte et vous retombez au sol.");
-						lblNewLabel.setBounds(15, 15, 600, 40);
-						Choix.add(lblNewLabel);
-						
-						btnChoix1.setText("Suite");
-						btnChoix1.setBounds(630, 15, 140, 40);
-						Choix.add(btnChoix1);
-						btnChoix1.addActionListener(new ActionListener() {
+					btnChoix1.setText("Suite");
+					btnChoix1.setBounds(630, 15, 140, 40);
+					Choix.add(btnChoix1);
+					btnChoix1.addActionListener(new ActionListener() {
 
-							@Override
-							public void actionPerformed(ActionEvent e) {
-								// TODO Auto-generated method stub
-								controle launch = new controle();
-								launch.Volet16();
-								dispose();
-							}
-						});
-					}
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							controleur.Volet12();
+							dispose();
+						}
+					});
+				}
+				
+				else {
+					JLabel lblNewLabel = new JLabel();
+					lblNewLabel.setText("La douleur est trop forte et vous retombez au sol.");
+					lblNewLabel.setBounds(15, 15, 600, 40);
+					Choix.add(lblNewLabel);
+					
+					btnChoix1.setText("Suite");
+					btnChoix1.setBounds(630, 15, 140, 40);
+					Choix.add(btnChoix1);
+					btnChoix1.addActionListener(new ActionListener() {
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							controleur.Volet16();
+							dispose();
+						}
+					});
 				}
 			}
 		});
