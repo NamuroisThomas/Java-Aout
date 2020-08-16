@@ -39,7 +39,7 @@ public class newPerso extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel thumb = new JLabel();
-		ImageIcon icon = new ImageIcon("M:/Projet-Java/LivreHeros/personnage.jpg"); 
+		ImageIcon icon = new ImageIcon("C:\\Users\\User\\Documents\\GitHub\\Java-Aout\\LivreHeros\\image\\personnage.jpg"); 
 		contentPane.setLayout(null);
 		thumb.setIcon(icon);
 		thumb.setBounds(340, 0, 209, 267);

@@ -78,19 +78,19 @@ public class Volet1 extends JFrame {
 		lblChance.setBounds(10, 170, 150, 20);
 		Personnage.add(lblChance);
 		
-		JLabel lblPointEndurance = new JLabel("0");
+		JLabel lblPointEndurance = new JLabel("");
 		lblPointEndurance.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointEndurance.setBounds(170, 90, 100, 20);
 		Personnage.add(lblPointEndurance);
 		lblPointEndurance.setText(String.valueOf(controleur.prendreEndurance()));
 		
-		JLabel lblPointHabilite = new JLabel("0");
+		JLabel lblPointHabilite = new JLabel("");
 		lblPointHabilite.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointHabilite.setBounds(170, 130, 100, 20);
 		Personnage.add(lblPointHabilite);
 		lblPointHabilite.setText(String.valueOf(controleur.prendreHabilite()));
 		
-		JLabel lblPointChance = new JLabel("0");
+		JLabel lblPointChance = new JLabel("");
 		lblPointChance.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointChance.setBounds(170, 170, 100, 20);
 		Personnage.add(lblPointChance);

@@ -150,7 +150,6 @@ public class Volet6 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(controleur.eventChance() == true) {
-					System.out.println("if chance");
 					JLabel lblNewLabel = new JLabel();
 					lblNewLabel.setText("Jet réussi");
 					lblNewLabel.setBounds(15, 15, 140, 40);
@@ -171,7 +170,6 @@ public class Volet6 extends JFrame {
 					});
 				}
 				else {
-					System.out.println("else chance");
 					JLabel lblNewLabel = new JLabel();
 					lblNewLabel.setText("Jet raté");
 					lblNewLabel.setBounds(15, 15, 140, 40);

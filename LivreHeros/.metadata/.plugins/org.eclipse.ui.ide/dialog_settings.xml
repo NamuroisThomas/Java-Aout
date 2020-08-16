@@ -6,7 +6,14 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Projet-Java\LivreHeros"/>
+			<item value="D:\Projet-Java"/>
+			<item value="M:\Projet-Java\LivreHeros"/>
 			<item value="C:\Users\User\Documents\GitHub\Java-Aout\LivreHeros"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="BasicNewProjectResourceWizard">
 	</section>
 </section>

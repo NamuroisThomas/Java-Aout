@@ -2,6 +2,7 @@ package View;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -52,7 +53,12 @@ public class Accueil extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				Controleur lancer = new Controleur();
-				lancer.lancerJeu();
+				try {
+					lancer.charger();
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
 			}
 		});
@@ -72,7 +78,7 @@ public class Accueil extends JFrame {
 		});
 		
 		JLabel thumb = new JLabel();
-		ImageIcon icon = new ImageIcon("M:/Projet-Java/LivreHeros/Roleplaying01.jpg"); 
+		ImageIcon icon = new ImageIcon("C:\\Users\\User\\Documents\\GitHub\\Java-Aout\\LivreHeros\\image\\Roleplaying01.jpg"); 
 		thumb.setIcon(icon);
 		thumb.setBounds(240, 0, 540, 433);
 		contentPane.add(thumb);

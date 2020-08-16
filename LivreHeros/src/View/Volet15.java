@@ -95,7 +95,7 @@ public class Volet15 extends JFrame {
 		lblPointChance.setFont(new Font("Baskerville Old Face", Font.PLAIN, 20));
 		lblPointChance.setBounds(170, 170, 100, 20);
 		Personnage.add(lblPointChance);
-		lblPointHabilite.setText(String.valueOf(controleur.prendreHabilite()));
+		lblPointChance.setText(String.valueOf(controleur.prendreChance()));
 		
 		/* Histoire */
 		JTextPane Story = new JTextPane();

@@ -1,6 +1,6 @@
 /**
- * Ce package contient les infos de la classe controle de ce projet
- * @author User
+ * Ce package contient toutes les classes correspondantes au Controle.
+ * @author Namurois Thomas
  *
  */
 package Controle;

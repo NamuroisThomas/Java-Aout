@@ -161,42 +161,49 @@ public class Volet11 extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(controleur.eventHabilite() == true) {
-					System.out.println("if");
 					JLabel lblNewLabel = new JLabel();
 					lblNewLabel.setText("Vous bougez juste à temps de la trajectoire de la flèche mais elle vous érafle quand même. Vous perdez\r\n" + 
 							"un point d'endurance.");
-					lblNewLabel.setBounds(15, 15, 600, 40);
+					lblNewLabel.setBounds(15, 15, 650, 40);
 					Choix.add(lblNewLabel);
 					
 					btnChoix1.setText("Suite");
-					btnChoix1.setBounds(630, 15, 140, 40);
+					btnChoix1.setBounds(680, 15, 140, 40);
 					Choix.add(btnChoix1);
 					btnChoix1.addActionListener(new ActionListener() {
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							controleur.modifierEndurance(1);
+							try {
+								controleur.modifierEndurance(1);
+							} catch (FileNotFoundException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							controleur.Volet12();
 							dispose();
 						}
 					});
 				}
 				else {
-					System.out.println("else");
-					
 					JLabel lblNewLabel = new JLabel();
 					lblNewLabel.setText("Vous sentez une douleur intense au niveau de votre molet et vous tombez au sol. Vous perdez 4 point d'endurance.");
-					lblNewLabel.setBounds(15, 15, 600, 40);
+					lblNewLabel.setBounds(15, 15, 650, 40);
 					Choix.add(lblNewLabel);
 					
 					btnChoix1.setText("Suite");
-					btnChoix1.setBounds(630, 15, 140, 40);
+					btnChoix1.setBounds(680, 15, 140, 40);
 					Choix.add(btnChoix1);
 					btnChoix1.addActionListener(new ActionListener() {
 
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							controleur.modifierEndurance(4);
+							try {
+								controleur.modifierEndurance(4);
+							} catch (FileNotFoundException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							controleur.Volet13();
 							dispose();
 						}

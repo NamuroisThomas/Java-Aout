@@ -3,17 +3,17 @@
  */
 package Modèle;
 
-import java.awt.EventQueue;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
 import Controle.Controleur;
-import View.Accueil;
 
 /**
- * @author User
+ * Cette classe permet la sauvegarde de la progression du joueur dans l'histoire.
+ * 
+ * @author Namurois Thomas
  *
  */
 public class Volet {
@@ -22,16 +22,38 @@ public class Volet {
 	 * @param args
 	 */
 	private int numVolet;
-	private Controleur controle = new Controleur();
 	
+	//Accesseurs
+	
+	/**
+	 * Fourni le numéro du volet sauvegardé.
+	 * 
+	 * @return numVolet La valeur de numVolet donc le numéro du volet sauvegardé.
+	 * */
 	private int getNumVolet() {
 		return numVolet;
 	};
+	
+	/**
+	 * Prend en paramètre le numéro du volet ou nous sommes dans l'histoire.
+	 * Donne la valeur passé en paramètre a numVolet.
+	 * 
+	 * @param volet La valeur que nous allons donner à numVolet.
+	 * */
 	
 	private void setNumVolet(int volet) {
 		this.numVolet = volet;
 	};
 	
+	//Méthode
+	
+	/**
+	 * Prend en paramètre le numéro du volet ou nous sommes.
+	 * Ecrit le numéro du volet à sauvegarder dans un fichier txt.
+	 * Lance la méthode setNumVolet() avec le numéro du volet actuel en paramètre.
+	 * 
+	 * @param volet Le numéro du volet ou le joueur ce trouve.
+	 * */
 	public void sauvegarder(int volet) throws FileNotFoundException {
 		PrintStream ps = new PrintStream("SauvegardeVolet");
 		setNumVolet(volet);
@@ -40,8 +62,16 @@ public class Volet {
 		
 	};
 	
+	/**
+	 * Récupère le numéro de volet qui à été sauvegardé.
+	 * Donne la valeur sauvegardé à numVolet grâce à la méthode setNumVolet().
+	 * Grâce à une suite de condition, lance le volet correspondant à setNumVolet.
+	 * 
+	 * */
+	
 	public void charger() throws FileNotFoundException {
 		Scanner sc = new Scanner(new File("SauvegardeVolet"));
+		Controleur controle = new Controleur();
 		setNumVolet(sc.nextInt());
 		
 		if(numVolet == 1) {controle.Volet1();}
